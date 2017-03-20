@@ -8,11 +8,11 @@ endif()
 
 ADD_EXECUTABLE(testnormal test-normal.cpp)
 
-INCLUDE_DIRECTORIES(/home/sjc/tools/gperftools/include) #unwind gperftools-2.0
+INCLUDE_DIRECTORIES(/path/to/your/gperftools/and/unwind/include) #unwind gperftools-2.0
 
-FIND_LIBRARY(UNWIND_LIB NAMES unwind PATHS "/home/sjc/tools/gperftools/lib/")
+FIND_LIBRARY(UNWIND_LIB NAMES unwind PATHS "/path/to/your/unwind/lib/")
 MESSAGE(STATUS "Library path UNWIND_LIB is " ${UNWIND_LIB})
-FIND_LIBRARY(PROFILER_LIB NAMES profiler PATHS "/home/sjc/tools/gperftools/lib/")
+FIND_LIBRARY(PROFILER_LIB NAMES profiler PATHS "/path/to/your/gperftools/lib/")
 MESSAGE(STATUS "Library path PROFILER_LIB is " ${PROFILER_LIB})
 
 TARGET_LINK_LIBRARIES(testnormal ${UNWIND_LIB})
